@@ -1,9 +1,18 @@
 import {Link} from "react-router";
 
 function PrehistoricAnimal({prehistoricAnimal}){
+    const videoUrl = `${import.meta.env.VITE_BASE_URI}/${prehistoricAnimal.path}`
+
+
     return(
         <article className={"group p-6 bg-white rounded-2xl border border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-4"} >
             <h2 className={"text-2xl font-bold text-slate-800 line-clamp-2"}>{prehistoricAnimal.genus}</h2>
+            {videoUrl && (
+                <video controls className="w-full max-w-xl rounded-lg">
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            )}
             <div className={"text-slate-600"}>
                 <div className={"text-sm font-semibold uppercase tracking-wide text-slate-600"}>Era:</div>
                 <div className={"text-base"}>{prehistoricAnimal.era}</div>
