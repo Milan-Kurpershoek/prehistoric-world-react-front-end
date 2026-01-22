@@ -11,6 +11,8 @@ function DetailsPrehistoricAnimal(){
         ? `${import.meta.env.VITE_BASE_URI}/${details.path}`
         : null;
 
+    // const [show404, setShow404] = useState(false);
+
     const deletePrehistoricAnimal = async(id)=>{
         try{
             const result = await fetch (`http://145.24.237.147:8000/prehistoric-animals/${id}`,{
@@ -36,12 +38,17 @@ function DetailsPrehistoricAnimal(){
                 }
             });
 
+            if (!result.ok){
+                throw new Error(`HTTP error! status: ${result.status}`);
+            }
             const data = await result.json()
             setDetails(data)
             console.log(data)
 
         }catch (e){
             console.log(e)
+            // navigate("/not-found")
+            // setShow404(true);
         }
     };
 

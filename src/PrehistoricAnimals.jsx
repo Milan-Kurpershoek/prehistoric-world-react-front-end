@@ -27,7 +27,7 @@ function PrehistoricAnimals (){
     }, []);
 
     return(
-        <main className="h-screen mx-auto max-w-7xl">
+        <section className="mx-auto max-w-7xl pb-12">
             {prehistoricAnimals ? (
                 <>
                     <h1 className="font-bold text-4xl mt-4">Prehistoric Animals</h1>
@@ -40,7 +40,7 @@ function PrehistoricAnimals (){
             ): (
                 <p>A little patience, notes are loading...</p>
             )}
-        </main>
+        </section>
     )
 }
 

@@ -4,6 +4,7 @@ import PrehistoricAnimals from "./PrehistoricAnimals.jsx";
 import DetailsPrehistoricAnimal from "./DetailsPrehistoricAnimal.jsx";
 import EditPrehistoricAnimal from "./EditPrehistoricAnimal.jsx";
 import CreatePrehistoricAnimal from "./CreatePrehistoricAnimal.jsx";
+import Error from "./Error.jsx";
 // import je components
 
 
@@ -13,6 +14,7 @@ import CreatePrehistoricAnimal from "./CreatePrehistoricAnimal.jsx";
 const router = createBrowserRouter([
     {
         element: <Layout />,
+        errorElement:<Error/>,
         children: [
             {
                 path: "/",

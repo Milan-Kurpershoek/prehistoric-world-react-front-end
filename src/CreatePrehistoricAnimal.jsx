@@ -9,7 +9,7 @@ function CreatePrehistoricAnimal(){
         genus: "",
         era: "",
         family: "",
-        video: null,
+        video: "",
     })
 
     const handleInputChange = (e) => {
