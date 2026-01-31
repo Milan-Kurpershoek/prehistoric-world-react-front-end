@@ -54,6 +54,11 @@ function EditPrehistoricAnimal(){
                 }
             });
 
+            if (result.status === 404){
+                navigate("*");
+                return;
+            }
+
             const data = await result.json()
             setEditPrehistoricAnimal(data)
             console.log(data)
